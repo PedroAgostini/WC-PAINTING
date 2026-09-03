@@ -145,7 +145,15 @@ function structuredData() {
         },
       })),
     },
-    sameAs: [site.googleBusinessUrl],
+    // Every profile that represents this same business. It is what lets a
+    // search engine treat the Google, Facebook, Instagram and Yelp listings as
+    // one entity instead of four unrelated ones.
+    sameAs: [
+      site.googleBusinessUrl,
+      site.social.facebook,
+      site.social.instagram,
+      site.social.yelp,
+    ].filter(Boolean),
   };
 }
 

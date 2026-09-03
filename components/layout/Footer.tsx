@@ -2,10 +2,27 @@ import Image from "next/image";
 import { nav, services, site } from "@/lib/site.config";
 import {
   ArrowRightIcon,
+  FacebookGlyph,
+  GoogleGlyph,
+  InstagramGlyph,
   MailIcon,
   PhoneIcon,
   PinIcon,
+  YelpGlyph,
 } from "@/components/ui/Icons";
+
+/**
+ * Only the profiles that actually exist. A null entry in the config drops out
+ * here rather than rendering a button that goes nowhere.
+ */
+const socials = [
+  { label: "Google", href: site.googleBusinessUrl, icon: GoogleGlyph },
+  { label: "Facebook", href: site.social.facebook, icon: FacebookGlyph },
+  { label: "Instagram", href: site.social.instagram, icon: InstagramGlyph },
+  { label: "Yelp", href: site.social.yelp, icon: YelpGlyph },
+].filter((s): s is { label: string; href: string; icon: typeof YelpGlyph } =>
+  Boolean(s.href),
+);
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -46,6 +63,24 @@ export function Footer() {
               {site.tagline}. Interior and exterior painting across Greater
               Boston and Cape Cod since {site.foundedYear}.
             </p>
+
+            {socials.length > 0 && (
+              <ul className="mt-7 flex items-center gap-3">
+                {socials.map(({ label, href, icon: Icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${site.name} on ${label}`}
+                      className="flex h-11 w-11 items-center justify-center rounded-full bg-white/[0.08] text-on-brand transition-[background-color,color,transform] duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-brand-darkest"
+                    >
+                      <Icon className="h-[1.15rem] w-[1.15rem]" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <nav className="lg:col-span-2" aria-label="Sections">

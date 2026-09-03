@@ -6,6 +6,7 @@ import {
   InstagramGlyph,
   MailIcon,
   PhoneIcon,
+  YelpGlyph,
 } from "@/components/ui/Icons";
 import { site } from "@/lib/site.config";
 import { siteUrl } from "@/lib/seo";
@@ -99,6 +100,17 @@ export default function RedirectPage() {
             detail: "Before and after, job by job",
             href: site.social.instagram,
             icon: InstagramGlyph,
+            external: true,
+          } satisfies CardLink,
+        ]
+      : []),
+    ...(site.social.yelp
+      ? [
+          {
+            label: "Yelp",
+            detail: "Read reviews from local homeowners",
+            href: site.social.yelp,
+            icon: YelpGlyph,
             external: true,
           } satisfies CardLink,
         ]

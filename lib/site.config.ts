@@ -95,6 +95,18 @@ export const site = {
 
   googleBusinessUrl: "https://share.google/75tBV7rxyMDYwhEpX",
 
+  /**
+   * Social profiles, used only by the /card page.
+   *
+   * Null until the real profile URL is confirmed. The card renders whatever is
+   * filled in and silently drops the rest, so a placeholder link never ships
+   * and a missing one never leaves a dead button on the page.
+   */
+  social: {
+    facebook: null as string | null,
+    instagram: null as string | null,
+  },
+
   /** The radius the company advertises, in miles. */
   serviceRadiusMiles: 50,
 

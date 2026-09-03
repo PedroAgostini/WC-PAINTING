@@ -1,0 +1,25 @@
+# Dependencies and build output
+node_modules/
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# Secrets. .env.example is committed as the template; the real keys are not.
+.env
+.env*.local
+
+# Design-tool working state: review screenshots and session artifacts, ~19MB
+# of PNGs that are regenerated on demand and belong to nobody's checkout.
+.impeccable/
+.codex/
+.claude/settings.local.json
+
+# Saved copies of other companies' sites, kept locally as design reference.
+# Not ours to redistribute.
+Refs/
+
+# OS
+.DS_Store
+Thumbs.db

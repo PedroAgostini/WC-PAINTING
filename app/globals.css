@@ -1,0 +1,306 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens
+   Palette is derived from the logo: #3A7B4B is the mark's green, #61A047 the
+   roofline green, #000000 the wordmark. Everything else is a neutral built to
+   sit against them. Nothing outside this ramp may appear on the page.
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Ground and surfaces */
+  --color-ground: #f7f6f3;
+  --color-surface: #ffffff;
+  --color-surface-sunk: #efeee9;
+
+  /* Ink */
+  --color-ink: #141614;
+  --color-ink-muted: #5c615d;
+  --color-ink-soft: #6c706c;
+
+  /* Brand green — owns whole regions, never sprinkled as an accent */
+  --color-brand: #3a7b4b;
+  --color-brand-deep: #2c5e39;
+  --color-brand-darkest: #1c3d25;
+  --color-accent: #61a047;
+
+  /* The action colour is the logo's own black — the "WC" wordmark is #000000.
+     Nothing else on the page uses it as a fill, so every black thing is
+     something to click. It cannot sit on the deep green bands (1.7:1), so
+     those invert to the `light` action instead; see components/ui/Cta.tsx. */
+  --color-action: #000000;
+
+  /* Surfaces. Sand is a warm neutral and mint a tint of the brand green —
+     neither introduces a hue the identity does not already contain. */
+  --color-card-cream: #efe7d6;
+  --color-mint: #c6dccc;
+
+  /* Ink for use on top of the green bands */
+  --color-on-brand: #f2f6f2;
+  --color-on-brand-muted: #bed4c3;
+
+  /* Alert text on the green bands. The accent green is a graphic colour and
+     does not clear 4.5:1 as small text on brand-darkest. */
+  --color-on-brand-alert: #c3e6b0;
+
+  /* Rules and hairlines */
+  --color-rule: #e2e0da;
+  --color-rule-strong: #cfccc3;
+  --color-rule-on-brand: #3f7d51;
+
+  /* Type */
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  /* One easing for the whole page. Exponential ease-out. */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows carry an offset and a soft blur — never a zero-offset halo. */
+  --shadow-raised: 0 1px 2px rgb(20 22 20 / 0.04), 0 8px 24px -12px rgb(20 22 20 / 0.14);
+  --shadow-lifted: 0 2px 4px rgb(20 22 20 / 0.05), 0 24px 48px -20px rgb(20 22 20 / 0.22);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Header height plus breathing room, so anchors do not land under it. */
+    scroll-padding-top: 6.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    /* Never below 16px — the audience is 40-70+. */
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Browser surfaces we did not draw still carry the design. */
+  ::selection {
+    background-color: var(--color-brand);
+    color: #ffffff;
+  }
+
+  :root {
+    caret-color: var(--color-brand);
+    accent-color: var(--color-brand);
+    scrollbar-color: var(--color-rule-strong) var(--color-ground);
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ground);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-rule-strong);
+    border: 2px solid var(--color-ground);
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ink-soft);
+  }
+
+  /* One focus ring for the whole site, keyboard only. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+  }
+  .on-brand :focus-visible,
+  .on-brand:focus-visible {
+    outline-color: var(--color-on-brand-alert);
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: from-font;
+  }
+
+  /* Figures line up in the trust bar, the areas list and the project records. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Autofill should not repaint our fields blue. */
+  input:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-text-fill-color: var(--color-ink);
+    -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Type scale
+   Display is Archivo pushed to its expanded width and heavy weight so it
+   echoes the logo's wordmark. Tracking tightens as size grows.
+--------------------------------------------------------------------------- */
+
+@layer components {
+  .display {
+    font-weight: 800;
+    font-stretch: 112%;
+    letter-spacing: 0;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .serif-display {
+    font-family: var(--font-serif-display), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 0.98;
+    text-wrap: balance;
+    /* Headings are written in sentence case in the components and capitalised
+       here, so the copy stays editable in plain language. */
+    text-transform: capitalize;
+    /* A single long word — "Uncompromising" — must never push the page wider
+       than the screen. */
+    overflow-wrap: break-word;
+  }
+
+  /* ---- Heading scale -------------------------------------------------------
+     Sizes are fluid and capped so a heading lands in two lines at every width
+     instead of stacking into a column of single words. Set the size here, not
+     per section, and never pair one of these with a `max-w-[Nch]` clamp: the
+     clamp is what forces the stack. */
+
+  .h-hero {
+    font-size: clamp(2.9rem, 7.4vw, 6.4rem);
+    line-height: 0.94;
+  }
+
+  .h-section {
+    font-size: clamp(2.35rem, 4.6vw, 4rem);
+    line-height: 1;
+  }
+
+  /* Section headings that sit in a half-width column need a smaller cap. */
+  .h-section-narrow {
+    font-size: clamp(2.2rem, 3.6vw, 3.25rem);
+    line-height: 1.02;
+  }
+
+  .h-card {
+    font-size: clamp(1.85rem, 2.6vw, 2.5rem);
+    line-height: 1.04;
+  }
+
+  .display-sm {
+    font-weight: 800;
+    font-stretch: 108%;
+    letter-spacing: 0;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  /* Small tracked uppercase, used for column headers and record labels.
+     Never placed above a heading as an eyebrow. */
+  .label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  /* Body copy holds a readable measure. */
+  .measure {
+    max-width: 68ch;
+  }
+  .measure-tight {
+    max-width: 54ch;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Motion
+   One authored moment: content rises into place once, on a single easing and
+   a single stagger. Content is visible by default so a failed observer or a
+   reduced-motion preference never hides anything.
+--------------------------------------------------------------------------- */
+
+@layer utilities {
+  @keyframes marquee-x {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-x {
+    animation: marquee-x 28s linear infinite;
+  }
+
+  /* Two-direction marquee. The track holds the content twice, so translating
+     half its width loops seamlessly. Speed comes from --duration on the
+     wrapper, so each row can run at its own pace. */
+  @keyframes marquee-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .marquee-track {
+    animation: marquee-x var(--duration, 40s) linear infinite;
+  }
+
+  .marquee-track-reverse {
+    animation: marquee-right var(--duration, 40s) linear infinite;
+  }
+
+  .marquee-group:hover .marquee-pausable {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-x,
+    .marquee-track,
+    .marquee-track-reverse {
+      animation: none;
+    }
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(1.25rem);
+      transition:
+        opacity 0.7s var(--ease-out-expo),
+        transform 0.7s var(--ease-out-expo);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform;
+    }
+
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

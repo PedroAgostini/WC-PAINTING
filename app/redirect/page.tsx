@@ -118,7 +118,7 @@ export default function RedirectPage() {
   ];
 
   return (
-    <main className="relative flex h-svh flex-col overflow-hidden bg-brand-darkest px-5 py-6 text-on-brand sm:px-8 sm:py-10">
+    <main className="relative flex min-h-svh flex-col bg-brand-darkest px-5 py-10 text-on-brand sm:px-8 sm:py-14">
       <Image
         src="/hero-painting-bg.png"
         alt=""
@@ -136,7 +136,7 @@ export default function RedirectPage() {
       <div className="relative z-10 mx-auto flex w-full max-w-[32rem] flex-1 flex-col justify-center">
         {/* The card itself: a panel lifted off the photograph, so the page
             reads as something handed to you rather than a page you landed on. */}
-        <div className="rounded-[2rem] border border-white/[0.12] bg-brand-darkest/[0.82] px-5 py-8 shadow-lifted backdrop-blur-md sm:px-8 sm:py-10">
+        <div className="rounded-[2rem] border border-white/[0.12] bg-brand-darkest/[0.82] px-6 py-10 shadow-lifted backdrop-blur-md sm:px-9 sm:py-12">
           <div className="text-center">
             {/* The mark carries the page. The heading stays for the document
                 outline and for anyone arriving with a screen reader. */}
@@ -147,11 +147,11 @@ export default function RedirectPage() {
               width={788}
               height={364}
               priority
-              className="mx-auto h-20 w-auto sm:h-24"
+              className="mx-auto h-24 w-auto sm:h-28"
             />
           </div>
 
-          <ul className="mt-8 space-y-2.5">
+          <ul className="mt-10 space-y-3">
             {links.map(({ label, detail, href, icon: Icon, external }) => (
               <li key={label}>
                 <a
@@ -159,9 +159,9 @@ export default function RedirectPage() {
                   {...(external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="group flex items-center gap-4 rounded-full bg-white/[0.07] px-5 py-3.5 transition-[background-color,transform] duration-300 hover:-translate-y-0.5 hover:bg-white/[0.14]"
+                  className="group flex items-center gap-4 rounded-full bg-white/[0.07] px-5 py-4 transition-[background-color,transform] duration-300 hover:-translate-y-0.5 hover:bg-white/[0.14]"
                 >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-brand-darkest transition-transform duration-300 group-hover:scale-105">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent text-brand-darkest transition-transform duration-300 group-hover:scale-105">
                     <Icon className="h-5 w-5" />
                   </span>
                   <span className="min-w-0 flex-1">

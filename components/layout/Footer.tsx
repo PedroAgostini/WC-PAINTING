@@ -3,7 +3,7 @@ import { nav, services, site } from "@/lib/site.config";
 import {
   ArrowRightIcon,
   FacebookGlyph,
-  GoogleGlyph,
+  GoogleGlyphMono,
   InstagramGlyph,
   MailIcon,
   PhoneIcon,
@@ -16,7 +16,7 @@ import {
  * here rather than rendering a button that goes nowhere.
  */
 const socials = [
-  { label: "Google", href: site.googleBusinessUrl, icon: GoogleGlyph },
+  { label: "Google", href: site.googleBusinessUrl, icon: GoogleGlyphMono },
   { label: "Facebook", href: site.social.facebook, icon: FacebookGlyph },
   { label: "Instagram", href: site.social.instagram, icon: InstagramGlyph },
   { label: "Yelp", href: site.social.yelp, icon: YelpGlyph },

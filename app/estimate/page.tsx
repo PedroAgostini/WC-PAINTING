@@ -59,22 +59,6 @@ export default function EstimatePage() {
                 {site.responseHours} hours.
               </p>
 
-              <ul className="mx-auto mt-8 flex max-w-[46rem] flex-wrap items-center justify-center gap-x-7 gap-y-3 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white/85">
-                <li className="flex items-center gap-2.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  No deposit
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  No obligation
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  {site.credentials.licensed
-                    ? "Licensed & fully insured"
-                    : "Fully insured"}
-                </li>
-              </ul>
             </div>
           </div>
         </section>

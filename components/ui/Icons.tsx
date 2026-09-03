@@ -185,10 +185,47 @@ export function InstagramGlyph({ className }: IconProps) {
   );
 }
 
+/**
+ * The client's own Yelp mark, in `public/yelp.png`.
+ *
+ * Painted through a CSS mask rather than placed as an image, so the shape
+ * takes `currentColor` and behaves exactly like the drawn glyphs beside it:
+ * dark on the green disc of the contact card, white on the dark disc in the
+ * footer, from one black-on-transparent file.
+ */
 export function YelpGlyph({ className }: IconProps) {
   return (
+    <span
+      aria-hidden="true"
+      className={`inline-block bg-current ${className ?? ""}`}
+      style={{
+        maskImage: "url(/yelp.png)",
+        WebkitMaskImage: "url(/yelp.png)",
+        // The file carries its own padding, so it reads smaller than the drawn
+        // glyphs beside it at the same box. Scaled up to match their weight.
+        maskSize: "118%",
+        WebkitMaskSize: "118%",
+        maskRepeat: "no-repeat",
+        WebkitMaskRepeat: "no-repeat",
+        maskPosition: "center",
+        WebkitMaskPosition: "center",
+      }}
+    />
+  );
+}
+
+/**
+ * The single-colour Google mark, for surfaces where the icon has to change
+ * colour with its container.
+ *
+ * The full-colour version cannot: on a green hover state its own green segment
+ * disappears into the disc, and the rest muddies. Use this one wherever the
+ * background moves, and the colour version only on a stable light ground.
+ */
+export function GoogleGlyphMono({ className }: IconProps) {
+  return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
-      <path d="M12.271 16.718v1.417q-.011 3.257-.067 3.334a.95.95 0 0 1-.501.372q-.879.278-2.443-.226-1.565-.505-1.94-1.041a.95.95 0 0 1-.19-.568.9.9 0 0 1 .157-.462q.132-.198 1.377-1.303.68-.618 1.078-.993.526-.492.939-.874.412-.383.554-.463a.87.87 0 0 1 .638-.099q.324.083.398.406M9.375 13.66a.94.94 0 0 1-.46.6q-.15.09-.596.203-.6.15-1.11.284-.51.135-1.226.32-.716.185-1.062.263-.98.21-1.258.135a.94.94 0 0 1-.42-.293q-.457-.607-.352-2.246.104-1.638.518-2.192a.94.94 0 0 1 .48-.315q.279-.075 1.244.312.964.386 1.723.7.759.313 1.487.6.727.286.844.352.42.24.554.66a.9.9 0 0 1-.06.652M21.296 17.46q-.23 1.62-1.02 2.62a.95.95 0 0 1-.436.322q-.278.075-1.248-.32-.97-.394-1.725-.7-.756-.307-1.483-.596-.727-.29-.845-.356a.9.9 0 0 1-.464-.66.87.87 0 0 1 .091-.65q.15-.24.526-.464.245-.15.696-.354.45-.203.99-.464.542-.26 1.19-.6.65-.34 1.006-.51.98-.45 1.29-.42a.94.94 0 0 1 .48.24q.6.58.952 2.912M12.271 2.53v9.13q-.075.42-.398.66a.86.86 0 0 1-.7.135q-.24-.06-.65-.53-.24-.27-.6-.72-.36-.45-.87-1.05-.51-.6-.87-1.05-.75-.9-.87-1.2a.94.94 0 0 1-.06-.63q.21-.72 1.86-1.71 1.65-.99 2.55-.99a.95.95 0 0 1 .608.226M21.63 8.1q.3.63-.24 2.19-.54 1.56-1.05 1.95a.94.94 0 0 1-.6.21q-.36 0-1.29-.72-.93-.72-1.62-1.26-.69-.54-1.35-1.05-.66-.51-.78-.63a.87.87 0 0 1-.27-.6.9.9 0 0 1 .18-.63q.15-.21 1.35-1.11 1.2-.9 1.98-1.44.78-.54 1.11-.66a.94.94 0 0 1 .63.03q.66.24 1.5 1.86" />
+      <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.344-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24Z" />
     </svg>
   );
 }

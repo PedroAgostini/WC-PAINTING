@@ -7,6 +7,10 @@ import { site } from "@/lib/site.config";
  * hero leads with, because a shared link is often the first impression the
  * paid traffic gets.
  */
+// Rendered once at build time. Without this the route counts as dynamic and
+// `output: "export"` refuses to build, which rules out static hosting.
+export const dynamic = "force-static";
+
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = `${site.legalName}: interior and exterior painting in Greater Boston`;

@@ -89,7 +89,7 @@ export function Header() {
             </a>
 
             <a
-              href="#contact-estimate"
+              href="/estimate"
               className="group hidden items-center gap-2 rounded-full bg-on-brand px-6 py-3.5 text-[13px] font-extrabold uppercase text-action transition-colors duration-200 hover:bg-white lg:flex"
             >
               Contact
@@ -158,7 +158,7 @@ export function Header() {
 
           <div className="mt-auto space-y-3 pt-8">
             <a
-              href="#contact-estimate"
+              href="/estimate"
               onClick={() => setMenuOpen(false)}
               className="flex w-full items-center justify-center gap-2 rounded-full bg-on-brand px-6 py-4 text-[15px] font-extrabold uppercase text-action"
             >

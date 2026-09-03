@@ -47,7 +47,7 @@ export function FloatingCall() {
           Call
         </a>
         <a
-          href="#contact-estimate"
+          href="/#contact-estimate"
           className="flex items-center justify-center gap-2 rounded-full bg-brand px-4 py-3.5 text-[15px] font-semibold text-white"
         >
           Free estimate

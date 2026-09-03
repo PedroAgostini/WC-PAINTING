@@ -70,7 +70,7 @@ export function Footer() {
               {services.map((service) => (
                 <li key={service.id}>
                   <a
-                    href={`#${service.id}`}
+                    href={`/#${service.id}`}
                     className="inline-block text-[14.5px] text-on-brand transition-[color,transform] duration-200 hover:translate-x-1 hover:text-accent"
                   >
                     {service.name}

@@ -449,13 +449,17 @@ export const serviceAreas: ServiceAreaGroup[] = [
 export const projects: Project[] = [];
 
 /** Navigation. Anchors only — this is a single page. */
+/**
+ * Rooted at `/` rather than bare fragments, so the same header works on the
+ * estimate page. A bare `#about` there scrolls to nothing.
+ */
 export const nav = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#work" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Process", href: "#process" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Portfolio", href: "/#work" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Process", href: "/#process" },
 ] as const;
 
 export const fullAddress = `${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}`;

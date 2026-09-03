@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Young_Serif } from "next/font/google";
 import { site, fullAddress, services, serviceAreas } from "@/lib/site.config";
+import { isIndexable, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 /**
@@ -27,8 +28,6 @@ const youngSerif = Young_Serif({
   display: "swap",
   variable: "--font-serif-display",
 });
-
-const siteUrl = site.url;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -69,11 +68,15 @@ export const metadata: Metadata = {
     description:
       `${site.yearsExperience} years of experience. Fully insured. Detailed estimate within ${site.responseHours} hours.`,
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
-  },
+  // Tied to the same switch as robots.txt, so a staging build can never say
+  // one thing in the file and another in the head.
+  robots: isIndexable
+    ? {
+        index: true,
+        follow: true,
+        googleBot: { index: true, follow: true, "max-image-preview": "large" },
+      }
+    : { index: false, follow: false },
 };
 
 export const viewport: Viewport = {

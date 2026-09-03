@@ -60,13 +60,8 @@ for (const shot of shots) {
     await page.screenshot({ path: `${OUT}/${shot.name}-${section}.png` });
   }
 
-  await page.locator("#work").scrollIntoViewIfNeeded();
-  await page.waitForTimeout(350);
-  await page.locator("#work button[aria-label^='Open']").first().click();
-  await page.waitForTimeout(500);
-  await page.screenshot({ path: `${OUT}/${shot.name}-gallery-open.png` });
-  await page.keyboard.press("Escape");
-  await page.waitForTimeout(200);
+  // The gallery used to open a lightbox and this stepped through it. Nothing
+  // in that section is clickable any more, so there is no state to capture.
 
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(300);

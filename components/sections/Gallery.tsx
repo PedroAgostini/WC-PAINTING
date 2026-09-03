@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { projects, services, site } from "@/lib/site.config";
 import { PhotoFrame } from "@/components/ui/PhotoFrame";
 import { ArrowRightIcon, GoogleGlyph } from "@/components/ui/Icons";
-import { LayoutGrid, type LayoutGridCard } from "@/components/ui/layout-grid";
 
 export function Gallery() {
   const hasProjects = projects.length > 0;
@@ -127,21 +127,34 @@ function ProjectBrowser() {
   );
 }
 
+/**
+ * The photographs are here to be looked at, not opened. Nothing in this grid
+ * is clickable: a lightbox on a marketing page takes the visitor sideways at
+ * the exact moment the section is meant to push them towards the form.
+ */
 function PortfolioPreviewGrid() {
-  const cards: LayoutGridCard[] = services.map((service, index) => ({
-    id: service.id,
-    title: service.name,
-    thumbnail: service.image.src,
-    alt: service.image.alt,
-    className:
-      index === 0 || index === services.length - 1
-        ? "md:col-span-2"
-        : "md:col-span-1",
-  }));
-
   return (
     <div className="reveal mt-14 lg:mt-16">
-      <LayoutGrid cards={cards} />
+      <div className="grid gap-4 md:grid-cols-3">
+        {services.map((service, index) => (
+          <figure
+            key={service.id}
+            className={`relative min-h-[20rem] overflow-hidden rounded-[1.8rem] bg-brand-darkest shadow-lifted md:min-h-[22rem] lg:min-h-[23.5rem] ${
+              index === 0 || index === services.length - 1
+                ? "md:col-span-2"
+                : "md:col-span-1"
+            }`}
+          >
+            <Image
+              src={service.image.src}
+              alt={service.image.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover object-center"
+            />
+          </figure>
+        ))}
+      </div>
 
       <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
         <a

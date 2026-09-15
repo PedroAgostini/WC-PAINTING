@@ -40,8 +40,8 @@ export function About() {
             style={{ ["--reveal-delay" as string]: "120ms" }}
           >
             <PhotoFrame
-              src="/services/interior-painting.png"
-              alt="Protected home interior prepared for painting"
+              src="/about/deck-and-siding-finished-result.webp"
+              alt="Freshly painted white deck railing and siding overlooking a landscaped backyard"
               ratio="5 / 4"
               className="rounded-[2rem] shadow-lifted"
               tone="deep"

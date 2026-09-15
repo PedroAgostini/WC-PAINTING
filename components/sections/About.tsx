@@ -40,8 +40,8 @@ export function About() {
             style={{ ["--reveal-delay" as string]: "120ms" }}
           >
             <PhotoFrame
-              src="/about/rooftop-terrace-boston-skyline-golden-hour.webp"
-              alt="Rooftop terrace with a wrought-iron railing and stained wood pergola overlooking Boston brick rooftops at golden hour"
+              src="/hero-painting-bg.webp"
+              alt="Tudor-style estate exterior freshly painted in crisp white and dark trim, finished result"
               ratio="5 / 4"
               className="rounded-[2rem] shadow-lifted"
               tone="deep"

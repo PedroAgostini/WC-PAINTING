@@ -164,8 +164,8 @@ export const services: Service[] = [
     id: "exterior",
     name: "Exterior Painting",
     image: {
-      src: "/services/exterior-painting.png",
-      alt: "New England home exterior protected and prepared for painting",
+      src: "/services/exterior-painting.webp",
+      alt: "Gray shingle-style New England home with a stone-veneer base freshly painted under a clear blue sky",
     },
     summary:
       "Weather-proof your siding, trim, and decks against harsh New England winters.",

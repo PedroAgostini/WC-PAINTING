@@ -54,7 +54,7 @@ export function WhyUs() {
       className="relative bg-brand-darkest py-20 text-on-brand sm:py-24 lg:py-32"
     >
       <div
-        className="absolute inset-0 bg-[url('/services/exterior-painting.png')] bg-cover bg-center opacity-[0.12]"
+        className="absolute inset-0 bg-[url('/services/exterior-painting.webp')] bg-cover bg-center opacity-[0.12]"
         aria-hidden="true"
       />
       <div

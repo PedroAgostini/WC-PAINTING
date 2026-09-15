@@ -34,7 +34,7 @@ export default function EstimatePage() {
           className="relative flex min-h-[62svh] items-center overflow-hidden bg-brand-darkest text-white lg:min-h-[70svh]"
         >
           <Image
-            src="/hero-painting-bg.png"
+            src="/hero-painting-bg.webp"
             alt=""
             fill
             priority

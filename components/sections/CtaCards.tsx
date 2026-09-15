@@ -130,7 +130,7 @@ export function ContactCta() {
       title="One visit, then a real number"
       copy="Pick a time that suits your household. The owner measures the work himself, talks the finishes through with you, and the itemized price lands in your inbox inside 24 hours."
       ctaLabel="Book my visit"
-      image="/services/exterior-painting.png"
+      image="/services/exterior-painting.webp"
       tone="dark"
     />
   );

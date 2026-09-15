@@ -10,7 +10,7 @@ export function Hero() {
       className="relative min-h-[92svh] overflow-hidden bg-brand-darkest text-white"
     >
       <Image
-        src="/hero-painting-bg.png"
+        src="/hero-painting-bg.webp"
         alt=""
         fill
         priority

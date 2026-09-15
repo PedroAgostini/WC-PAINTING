@@ -120,7 +120,7 @@ export default function RedirectPage() {
   return (
     <main className="relative flex min-h-svh flex-col bg-brand-darkest px-5 py-10 text-on-brand sm:px-8 sm:py-14">
       <Image
-        src="/hero-painting-bg.png"
+        src="/hero-painting-bg.webp"
         alt=""
         fill
         priority

@@ -466,12 +466,12 @@ export const projects: Project[] = [];
  */
 export const portfolioHighlights: { src: string; alt: string }[] = [
   {
-    src: "/portfolio/cream-shingle-estate-exterior-repaint.webp",
-    alt: "Large cream shingle-style estate with fresh exterior paint and landscaped grounds",
+    src: "/portfolio/gray-shingle-home-exterior-repaint.webp",
+    alt: "Gray shingle-style home exterior with crisp white trim under a clear sky",
   },
   {
-    src: "/portfolio/brick-tudor-cottage-exterior-repaint.webp",
-    alt: "Brick Tudor-style cottage with a freshly painted gable under a clear sky",
+    src: "/portfolio/stained-porch-deck-finish.webp",
+    alt: "Freshly stained wraparound porch deck beside white siding and a landscaped garden",
   },
   {
     src: "/portfolio/white-tudor-courtyard-exterior-repaint.webp",

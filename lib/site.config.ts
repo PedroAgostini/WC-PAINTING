@@ -460,17 +460,18 @@ export const projects: Project[] = [];
  * `projects` is still empty. Unlike a Project, these carry no address, scope,
  * or duration claim — only a plain description of what the photo shows — so
  * nothing here states a fact that hasn't been confirmed. Every file is a real
- * job photo pulled from the client's own drive, never stock. Swap this grid
- * out once `projects` has real entries.
+ * job photo pulled from the client's own drive, never stock, and every shot
+ * is a finished result — no ladders, scaffolding, or job-site clutter in
+ * frame. Swap this grid out once `projects` has real entries.
  */
 export const portfolioHighlights: { src: string; alt: string }[] = [
   {
-    src: "/portfolio/shingle-home-scaffold-repaint.webp",
-    alt: "Multi-story shingle-style home with scaffolding up during an exterior repaint",
+    src: "/portfolio/cream-shingle-estate-exterior-repaint.webp",
+    alt: "Large cream shingle-style estate with fresh exterior paint and landscaped grounds",
   },
   {
-    src: "/portfolio/red-barn-style-exterior-repaint.webp",
-    alt: "Red barn-style building with freshly painted shingle siding and a new deck",
+    src: "/portfolio/brick-tudor-cottage-exterior-repaint.webp",
+    alt: "Brick Tudor-style cottage with a freshly painted gable under a clear sky",
   },
   {
     src: "/portfolio/white-tudor-courtyard-exterior-repaint.webp",

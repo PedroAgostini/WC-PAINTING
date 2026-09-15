@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { projects, services, site } from "@/lib/site.config";
+import { portfolioHighlights, projects, site } from "@/lib/site.config";
 import { PhotoFrame } from "@/components/ui/PhotoFrame";
 import { ArrowRightIcon, GoogleGlyph } from "@/components/ui/Icons";
 
@@ -136,18 +136,18 @@ function PortfolioPreviewGrid() {
   return (
     <div className="reveal mt-14 lg:mt-16">
       <div className="grid gap-4 md:grid-cols-3">
-        {services.map((service, index) => (
+        {portfolioHighlights.map((photo, index) => (
           <figure
-            key={service.id}
+            key={photo.src}
             className={`relative min-h-[20rem] overflow-hidden rounded-[1.8rem] bg-brand-darkest shadow-lifted md:min-h-[22rem] lg:min-h-[23.5rem] ${
-              index === 0 || index === services.length - 1
+              index === 0 || index === portfolioHighlights.length - 1
                 ? "md:col-span-2"
                 : "md:col-span-1"
             }`}
           >
             <Image
-              src={service.image.src}
-              alt={service.image.alt}
+              src={photo.src}
+              alt={photo.alt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover object-center"

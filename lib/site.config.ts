@@ -455,6 +455,33 @@ export const serviceAreas: ServiceAreaGroup[] = [
  */
 export const projects: Project[] = [];
 
+/**
+ * Unstructured real photos for the portfolio preview grid, shown while
+ * `projects` is still empty. Unlike a Project, these carry no address, scope,
+ * or duration claim — only a plain description of what the photo shows — so
+ * nothing here states a fact that hasn't been confirmed. Every file is a real
+ * job photo pulled from the client's own drive, never stock. Swap this grid
+ * out once `projects` has real entries.
+ */
+export const portfolioHighlights: { src: string; alt: string }[] = [
+  {
+    src: "/portfolio/shingle-home-scaffold-repaint.webp",
+    alt: "Multi-story shingle-style home with scaffolding up during an exterior repaint",
+  },
+  {
+    src: "/portfolio/red-barn-style-exterior-repaint.webp",
+    alt: "Red barn-style building with freshly painted shingle siding and a new deck",
+  },
+  {
+    src: "/portfolio/white-tudor-courtyard-exterior-repaint.webp",
+    alt: "White Tudor-style home exterior around a private courtyard garden",
+  },
+  {
+    src: "/portfolio/mauve-colonial-chimney-exterior-repaint.webp",
+    alt: "Mauve colonial home exterior with brick chimney freshly painted",
+  },
+];
+
 /** Navigation. Anchors only — this is a single page. */
 /**
  * Rooted at `/` rather than bare fragments, so the same header works on the

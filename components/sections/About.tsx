@@ -40,8 +40,8 @@ export function About() {
             style={{ ["--reveal-delay" as string]: "120ms" }}
           >
             <PhotoFrame
-              src="/about/wraparound-porch-swing-finished-result.webp"
-              alt="Freshly painted wraparound porch with white siding, railing, and a porch swing over a glossy stained floor"
+              src="/about/rooftop-terrace-boston-skyline-golden-hour.webp"
+              alt="Rooftop terrace with a wrought-iron railing and stained wood pergola overlooking Boston brick rooftops at golden hour"
               ratio="5 / 4"
               className="rounded-[2rem] shadow-lifted"
               tone="deep"

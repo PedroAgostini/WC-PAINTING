@@ -40,8 +40,8 @@ export function About() {
             style={{ ["--reveal-delay" as string]: "120ms" }}
           >
             <PhotoFrame
-              src="/about/deck-and-siding-finished-result.webp"
-              alt="Freshly painted white deck railing and siding overlooking a landscaped backyard"
+              src="/about/wraparound-porch-swing-finished-result.webp"
+              alt="Freshly painted wraparound porch with white siding, railing, and a porch swing over a glossy stained floor"
               ratio="5 / 4"
               className="rounded-[2rem] shadow-lifted"
               tone="deep"

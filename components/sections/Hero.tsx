@@ -31,9 +31,9 @@ export function Hero() {
               <span className="block text-accent">for Greater Boston</span>
             </h1>
             <p className="mx-auto mt-7 max-w-[44rem] text-[17px] leading-relaxed text-white/[0.86] sm:text-[19px]">
-              Interior and exterior painting with a uniformed, smoke-free crew,
-              daily cleanup, and the owner inspecting the finished work with
-              you.
+              We deliver every project on time, with a fully uniformed crew and
+              a clean job site. From start to finish, our focus is quality,
+              punctuality, and professionalism at every step!
             </p>
 
             {/* Proof the visitor can check, before they are asked to act. */}

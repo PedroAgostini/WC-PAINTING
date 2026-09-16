@@ -33,7 +33,8 @@ export function Hero() {
             <p className="mx-auto mt-7 max-w-[44rem] text-[17px] leading-relaxed text-white/[0.86] sm:text-[19px]">
               We deliver every project on time, with a fully uniformed crew and
               a clean job site. From start to finish, our focus is quality,
-              punctuality, and professionalism at every step!
+              punctuality, and professionalism{" "}
+              <span className="whitespace-nowrap">at every step!</span>
             </p>
 
             {/* Proof the visitor can check, before they are asked to act. */}

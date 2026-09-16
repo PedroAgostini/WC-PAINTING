@@ -17,9 +17,9 @@ export function Hero() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-black/[0.45]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/[0.58]" aria-hidden="true" />
       <div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgb(0_0_0_/_0.16)_42%,rgb(0_0_0_/_0.62)_100%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgb(0_0_0_/_0.18)_0%,rgb(0_0_0_/_0.34)_42%,rgb(0_0_0_/_0.78)_100%)]"
         aria-hidden="true"
       />
 

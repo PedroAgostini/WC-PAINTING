@@ -40,8 +40,8 @@ export function About() {
             style={{ ["--reveal-delay" as string]: "120ms" }}
           >
             <PhotoFrame
-              src="/hero-painting-bg.webp"
-              alt="Tudor-style estate exterior freshly painted in crisp white and dark trim, finished result"
+              src="/DRIVE/tudor-home-exterior-painting.webp"
+              alt="Tudor-style home exterior with freshly painted stucco and trim beside brickwork"
               ratio="5 / 4"
               className="rounded-[2rem] shadow-lifted"
               tone="deep"

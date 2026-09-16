@@ -16,10 +16,6 @@ export function Gallery() {
           <h2 className="serif-display h-section mx-auto max-w-[26ch]">
             Explore our recent painting transformations
           </h2>
-          <p className="mx-auto mt-6 max-w-[46rem] text-[16.5px] leading-relaxed text-ink-muted">
-            Real homes and buildings across Greater Boston and Cape Cod. No
-            stock photography.
-          </p>
         </div>
 
         {hasProjects ? <ProjectBrowser /> : <PortfolioPreviewGrid />}

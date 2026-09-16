@@ -164,8 +164,8 @@ export const services: Service[] = [
     id: "exterior",
     name: "Exterior Painting",
     image: {
-      src: "/services/exterior-painting.webp",
-      alt: "Gray shingle-style New England home with a stone-veneer base freshly painted under a clear blue sky",
+      src: "/DRIVE/tudor-home-exterior-painting.webp",
+      alt: "Tudor-style home exterior with brick, stucco, and trim painting under a clear sky",
     },
     summary:
       "Weather-proof your siding, trim, and decks against harsh New England winters.",
@@ -466,20 +466,20 @@ export const projects: Project[] = [];
  */
 export const portfolioHighlights: { src: string; alt: string }[] = [
   {
-    src: "/portfolio/gray-shingle-home-exterior-repaint.webp",
-    alt: "Gray shingle-style home exterior with crisp white trim under a clear sky",
+    src: "/DRIVE/deck-and-siding-exterior-painting.webp",
+    alt: "Freshly painted deck, white railings, and gray shingle siding on a home exterior",
   },
   {
-    src: "/portfolio/stained-porch-deck-finish.webp",
-    alt: "Freshly stained wraparound porch deck beside white siding and a landscaped garden",
+    src: "/DRIVE/painted-exterior-staircase-railings.webp",
+    alt: "Painted exterior staircase with white railings and stained wood treads",
   },
   {
-    src: "/portfolio/white-tudor-courtyard-exterior-repaint.webp",
-    alt: "White Tudor-style home exterior around a private courtyard garden",
+    src: "/DRIVE/front-porch-wood-staining.webp",
+    alt: "Front porch with stained wood flooring, white columns, and landscaped entry",
   },
   {
-    src: "/portfolio/mauve-colonial-chimney-exterior-repaint.webp",
-    alt: "Mauve colonial home exterior with brick chimney freshly painted",
+    src: "/DRIVE/courtyard-exterior-painting.webp",
+    alt: "Courtyard home exterior with light stucco, dark trim, and garden patio",
   },
 ];
 
